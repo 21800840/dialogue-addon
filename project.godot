@@ -1,0 +1,38 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[Layer Names]
+
+"2D Physics/Layer 2"="Dialogue"
+
+[application]
+
+config/name="dialogue-3-core"
+config/features=PackedStringArray("4.0", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[autoload]
+
+DialogueSignalBus="*res://addons/dialogue/singletons/dialogue-signalbus.gd"
+GlobalDialogue="*res://addons/dialogue/singletons/global-dialogue.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue/plugin.cfg")
+
+[layer_names]
+
+2d_physics/layer_2="Dialogue"
+"2d_physics/layer_2 "="Dialogue"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

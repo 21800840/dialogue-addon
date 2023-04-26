@@ -1,0 +1,67 @@
+Autoload:
+    - dialogue-signal-bus
+    - global-dialogue
+    - global-player-inventory // You might be able to comment out all uses of this script in the script files in dialogue
+
+How to use:
+Prerequisites - 
+ - A json file formatted like this:
+ {
+    "npc-name" : {
+        "dialogue stage" : {
+            "0" : {
+                "name":"npc name",
+                "text":"npc text"
+            },
+            "1" : {
+                "name":"npc name",
+                "text":"This would play straight after "0""
+            }
+        }
+        "This is another dialogue stage" : {
+            "0" : {
+                "name":"npc name",
+                "text":"npc text"
+            }
+            "1" : {
+                "name":"npc name",
+                "text":"This is how you add one option"
+                "options" : {
+                    "option 1" : {
+                        "text":"Leave is an in built flag and will end dialogue without changing the stage",
+                        "flag":"leave"
+                    }
+                }
+            }
+        }
+        "this is a third dialogue stage" : {
+            "0" : {
+                "name":"npc name",
+                "text":"This is how you add two options"
+                "options" : {
+                    "option 1" : {
+                        "text":"Leave is an in built flag and will end dialogue without changing the stage",
+                        "flag":"leave"
+                    }
+                    "option 2" : {
+                        "text":"If you need to run a custom command when a button is pressed, you can add it in the stage-and-event-manager.gd script",
+                        "flag":"collect-item-2"
+                    }
+                }
+            }
+        }
+    }
+ }
+
+Steps - 
+Step 1: Drag dialogue-manager.tscn onto whoever you want to give dialogue to's scene.
+Step 2: Right click the DialogueManager node and enable Editable Children.
+Step 3: Click on DialogueArea and give it a name, and point to it's dialogue in json form.
+Step 4: Right click the DialogueArea node and enable Editable Children.
+Step 5: Give whoever you want to give dialogue to a collision box of whatever size you want.
+Step 6: Give the player an Area2D with collision and set the Collision Layer to 2 (can be changed just make sure you change DialogueArea's Collision Layer too)
+Step 7: Create an entry in the global-dialogue stage_dictionary. Example: "npc-name":"starting stage"
+Step 8: In stage-and-event-manager.gd, create entries in change_dialogue_stage if you want to change stage after finishing the current one and create entires in custom_button_events() if you have to use custom events for your buttons.
+
+Tips:
+ - You can change the talk to key in the dialogue-area.gd script

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://buk1jb6yrl80w"]
+
+[ext_resource type="PackedScene" uid="uid://qt1hmcurj2vh" path="res://dialogue/dialogue-area/dialogue-area.tscn" id="1_ty12t"]
+[ext_resource type="PackedScene" uid="uid://dh8kw6yfikv85" path="res://dialogue/stage-and-event-manager/stage-and-event-manager.tscn" id="2_hebqr"]
+
+[node name="DialogueManager" type="Node2D"]
+
+[node name="DialogueArea" parent="." instance=ExtResource("1_ty12t")]
+
+[node name="StageAndEventManger" parent="." instance=ExtResource("2_hebqr")]

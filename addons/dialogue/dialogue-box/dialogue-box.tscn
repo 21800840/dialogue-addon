@@ -1,0 +1,113 @@
+[gd_scene load_steps=3 format=3 uid="uid://btdwhaj37y2hv"]
+
+[ext_resource type="Script" path="res://dialogue/dialogue-box/dialogue-box.gd" id="1_kr84y"]
+[ext_resource type="Texture2D" uid="uid://df2qenv2ft7xi" path="res://icon.svg" id="2_xf2dl"]
+
+[node name="DialogueBox" type="CanvasLayer"]
+script = ExtResource("1_kr84y")
+
+[node name="NoOptions" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 192.0
+offset_top = 384.0
+offset_right = 960.0
+offset_bottom = 584.0
+
+[node name="TextureRect" type="TextureRect" parent="NoOptions"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_right = 768.0
+offset_bottom = 128.0
+texture = ExtResource("2_xf2dl")
+
+[node name="NameLabel" type="Label" parent="NoOptions/TextureRect"]
+layout_mode = 0
+offset_right = 768.0
+offset_bottom = 64.0
+
+[node name="TextLabel" type="Label" parent="NoOptions/TextureRect"]
+layout_mode = 0
+offset_top = 72.0
+offset_right = 768.0
+offset_bottom = 200.0
+
+[node name="OneOption" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 192.0
+offset_top = 384.0
+offset_right = 960.0
+offset_bottom = 584.0
+
+[node name="TextureRect" type="TextureRect" parent="OneOption"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_right = 576.0
+offset_bottom = 200.0
+texture = ExtResource("2_xf2dl")
+
+[node name="NameLabel" type="Label" parent="OneOption/TextureRect"]
+layout_mode = 0
+offset_right = 576.0
+offset_bottom = 64.0
+
+[node name="TextLabel" type="Label" parent="OneOption/TextureRect"]
+layout_mode = 0
+offset_top = 72.0
+offset_right = 576.0
+offset_bottom = 200.0
+
+[node name="OneOptionButton" type="Button" parent="OneOption"]
+layout_mode = 0
+offset_left = 576.0
+offset_top = 64.0
+offset_right = 768.0
+offset_bottom = 136.0
+
+[node name="TwoOptions" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 192.0
+offset_top = 384.0
+offset_right = 960.0
+offset_bottom = 584.0
+
+[node name="TextureRect" type="TextureRect" parent="TwoOptions"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_right = 576.0
+offset_bottom = 200.0
+texture = ExtResource("2_xf2dl")
+
+[node name="NameLabel" type="Label" parent="TwoOptions/TextureRect"]
+layout_mode = 0
+offset_right = 576.0
+offset_bottom = 64.0
+
+[node name="TextLabel" type="Label" parent="TwoOptions/TextureRect"]
+layout_mode = 0
+offset_top = 72.0
+offset_right = 576.0
+offset_bottom = 200.0
+
+[node name="TwoOptionsButton" type="Button" parent="TwoOptions"]
+layout_mode = 0
+offset_left = 576.0
+offset_top = 16.0
+offset_right = 768.0
+offset_bottom = 88.0
+
+[node name="TwoOptionsButton2" type="Button" parent="TwoOptions"]
+layout_mode = 0
+offset_left = 576.0
+offset_top = 112.0
+offset_right = 768.0
+offset_bottom = 184.0
+
+[connection signal="pressed" from="OneOption/OneOptionButton" to="." method="_on_one_option_button_pressed"]
+[connection signal="pressed" from="TwoOptions/TwoOptionsButton" to="." method="_on_two_options_button_pressed"]
+[connection signal="pressed" from="TwoOptions/TwoOptionsButton2" to="." method="_on_two_options_button_2_pressed"]

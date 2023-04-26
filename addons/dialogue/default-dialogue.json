@@ -1,0 +1,5 @@
+{
+	"First Meet" : {
+		"0" : {"name":"Error", "text":"Error. There is no dialogue assigned to this NPC.", "options":{"option 1":{"text":"Close", "flag":"close"}, "option 2":{"text":"Leave", "flag":"leave"}}}
+	}
+}
