@@ -9,8 +9,6 @@ func _enter_tree():
 	add_autoload_singleton(AUTOLOAD_GLOBAL_DIALOGUE, "res://addons/dialogue/singletons/global-dialogue.gd")
 	
 	ProjectSettings.set_setting("layer_names/2d_physics/layer_2", "Dialogue") # Check (loop) for first unnamed layer and set self to that?
-	
-	print("Ignore the warnings, Godot hadn't loaded the singletons when they were pushed.")
 
 func _exit_tree():
 	remove_autoload_singleton(AUTOLOAD_DIALOGUE_SIGNALBUS)
