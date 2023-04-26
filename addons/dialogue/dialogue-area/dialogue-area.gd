@@ -4,7 +4,7 @@ var in_area = false
 var in_dialogue = false
 
 @export var npc_name = ""
-@export_file var dialogue_file = "res://dialogue/default-dialogue.json"
+@export_file var dialogue_file = "res://addons/dialogue/default-dialogue.json"
 
 func _ready():
 	DialogueSignalBus.connect("end_dialogue", end_dialogue)

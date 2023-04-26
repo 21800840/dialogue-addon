@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://btdwhaj37y2hv"]
 
-[ext_resource type="Script" path="res://dialogue/dialogue-box/dialogue-box.gd" id="1_kr84y"]
-[ext_resource type="Texture2D" uid="uid://df2qenv2ft7xi" path="res://icon.svg" id="2_xf2dl"]
+[ext_resource type="Script" path="res://addons/dialogue/dialogue-box/dialogue-box.gd" id="1_qt28e"]
+[ext_resource type="Texture2D" uid="uid://undc7ox1niww" path="res://icon.svg" id="2_xf2dl"]
 
 [node name="DialogueBox" type="CanvasLayer"]
-script = ExtResource("1_kr84y")
+script = ExtResource("1_qt28e")
 
 [node name="NoOptions" type="Control" parent="."]
 visible = false
