@@ -40,13 +40,13 @@ func parse_json(dialogue_file):
 
 
 func set_stage_size(npc_name, dialogue_stage):
-	stage_size = dialogue_dictionary[npc_name][dialogue_stage].size()
+	stage_size = dialogue_dictionary[dialogue_stage].size()
 	
 	print(stage_size)
 
 func set_option_amount(npc_name, dialogue_stage):
-	if dialogue_dictionary[npc_name][dialogue_stage][str(current_stage)].has("options"):
-		match dialogue_dictionary[npc_name][dialogue_stage][str(current_stage)]["options"].size():
+	if dialogue_dictionary[dialogue_stage][str(current_stage)].has("options"):
+		match dialogue_dictionary[dialogue_stage][str(current_stage)]["options"].size():
 			0:
 				option_amount = 0
 				print("0 options")
@@ -71,27 +71,27 @@ func next_dialogue(npc_name, dialogue_stage):
 				$NoOptions.visible = true
 				$OneOption.visible = false
 				$TwoOptions.visible = false
-				$NoOptions/TextureRect/NameLabel.text = dialogue_dictionary[npc_name][dialogue_stage][str(current_stage)]["name"]
-				$NoOptions/TextureRect/TextLabel.text = dialogue_dictionary[npc_name][dialogue_stage][str(current_stage)]["text"]
+				$NoOptions/TextureRect/NameLabel.text = dialogue_dictionary[dialogue_stage][str(current_stage)]["name"]
+				$NoOptions/TextureRect/TextLabel.text = dialogue_dictionary[dialogue_stage][str(current_stage)]["text"]
 			1:
 				$OneOption.visible = true
 				$NoOptions.visible = false
 				$TwoOptions.visible = false
-				$OneOption/TextureRect/NameLabel.text = dialogue_dictionary[npc_name][dialogue_stage][str(current_stage)]["name"]
-				$OneOption/TextureRect/TextLabel.text = dialogue_dictionary[npc_name][dialogue_stage][str(current_stage)]["text"]
-				$OneOption/OneOptionButton.text = dialogue_dictionary[npc_name][dialogue_stage][str(current_stage)]["options"]["option 1"]["text"]
-				$OneOption/OneOptionButton.set_meta("flag", dialogue_dictionary[npc_name][dialogue_stage][str(current_stage)]["options"]["option 1"]["flag"])
+				$OneOption/TextureRect/NameLabel.text = dialogue_dictionary[dialogue_stage][str(current_stage)]["name"]
+				$OneOption/TextureRect/TextLabel.text = dialogue_dictionary[dialogue_stage][str(current_stage)]["text"]
+				$OneOption/OneOptionButton.text = dialogue_dictionary[dialogue_stage][str(current_stage)]["options"]["option 1"]["text"]
+				$OneOption/OneOptionButton.set_meta("flag", dialogue_dictionary[dialogue_stage][str(current_stage)]["options"]["option 1"]["flag"])
 				has_options = true
 			2:
 				$TwoOptions.visible = true
 				$NoOptions.visible = false
 				$OneOption.visible = false
-				$TwoOptions/TextureRect/NameLabel.text = dialogue_dictionary[npc_name][dialogue_stage][str(current_stage)]["name"]
-				$TwoOptions/TextureRect/TextLabel.text = dialogue_dictionary[npc_name][dialogue_stage][str(current_stage)]["text"]
-				$TwoOptions/TwoOptionsButton.text = dialogue_dictionary[npc_name][dialogue_stage][str(current_stage)]["options"]["option 1"]["text"]
-				$TwoOptions/TwoOptionsButton.set_meta("flag", dialogue_dictionary[npc_name][dialogue_stage][str(current_stage)]["options"]["option 1"]["flag"])
-				$TwoOptions/TwoOptionsButton2.text = dialogue_dictionary[npc_name][dialogue_stage][str(current_stage)]["options"]["option 2"]["text"]
-				$TwoOptions/TwoOptionsButton2.set_meta("flag", dialogue_dictionary[npc_name][dialogue_stage][str(current_stage)]["options"]["option 2"]["flag"])
+				$TwoOptions/TextureRect/NameLabel.text = dialogue_dictionary[dialogue_stage][str(current_stage)]["name"]
+				$TwoOptions/TextureRect/TextLabel.text = dialogue_dictionary[dialogue_stage][str(current_stage)]["text"]
+				$TwoOptions/TwoOptionsButton.text = dialogue_dictionary[dialogue_stage][str(current_stage)]["options"]["option 1"]["text"]
+				$TwoOptions/TwoOptionsButton.set_meta("flag", dialogue_dictionary[dialogue_stage][str(current_stage)]["options"]["option 1"]["flag"])
+				$TwoOptions/TwoOptionsButton2.text = dialogue_dictionary[dialogue_stage][str(current_stage)]["options"]["option 2"]["text"]
+				$TwoOptions/TwoOptionsButton2.set_meta("flag", dialogue_dictionary[dialogue_stage][str(current_stage)]["options"]["option 2"]["flag"])
 				has_options = true
 	else:
 		end_dialogue(npc_name, dialogue_stage, false)
